@@ -1,6 +1,8 @@
 
 # Домашнее задание к лекции «Promises, async/await»
 
+[![Build status](https://ci.appveyor.com/api/projects/status/ow6qk5ns1q61fxad?svg=true)](https://ci.appveyor.com/project/RomanMenshikov92/promises-async-await-hw-10)
+
 **Важно**: каждая задача выполняется в виде отдельного проекта с собственным GitHub репозиторием.
 
 **Важно**: код должен проходить ESLint без ошибок.
