@@ -1,16 +1,15 @@
-import GameSavingLoaderAsyncAwait from '../GameSavingLoaderAsyncAwait';
+// для задачи Testing Async code (задача со звёздочкой)
 
-test('GameSavingLoaderAsyncAwait', async () => {
-  const expected = {
-    id: 9,
-    created: 1546300800,
-    userInfo: {
-      id: 1,
-      name: 'Hitman',
-      level: 10,
-      points: 2000,
-    },
-  };
-  const saving = await GameSavingLoaderAsyncAwait.load();
-  return expect(saving).toEqual(expected);
+import GameSavingLoaderAsyncAwait from '../GameSavingLoaderAsyncAwait';
+import read from '../reader';
+
+jest.mock('../reader');
+
+describe('GameSavingLoaderAsyncAwait', () => {
+  test('Error', async () => {
+    const textError = 'Ошибка 123';
+    read.mockRejectedValue(new Error(textError));
+
+    expect(GameSavingLoaderAsyncAwait.load()).rejects.toThrow(textError);
+  });
 });
